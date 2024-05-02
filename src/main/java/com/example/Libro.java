@@ -28,4 +28,13 @@ public class Libro {
         comentarios.add(comentario);
     }
 
+    public String getTitulo() {
+        return titulo;
+    }
+    public int getEjemplaresDisponibles() {
+        return ejemplaresDisponibles;
+    }
+    public void setEjemplaresDisponibles(int ejemplaresDisponibles) {
+        this.ejemplaresDisponibles = ejemplaresDisponibles;
+    }
 }
