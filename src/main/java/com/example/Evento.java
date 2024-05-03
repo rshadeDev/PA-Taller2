@@ -16,4 +16,12 @@ public class Evento {
     public String getNombre() {
         return nombre;
     }
+
+    public LocalDate getFecha() {
+        return fecha;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
 }

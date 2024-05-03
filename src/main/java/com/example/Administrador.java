@@ -20,11 +20,11 @@ public class Administrador {
 
     public void agregarEvento(Evento evento) {
         eventos.add(evento);
-        System.out.println("Evento " + evento.getNombre() + " agregado.");
+        System.out.println("Evento " + evento.getNombre() + " agregado, con fecha" + evento.getFecha() + " y descripcion: " + evento.getDescripcion());
     }
 
     public void eliminarEvento(Evento evento) {
         eventos.remove(evento);
-        System.out.println("Evento " + evento.getNombre() + " eliminado.");
+        System.out.println("Evento " + evento.getNombre() + " eliminado, con fecha" + evento.getFecha() + " y descripcion: " + evento.getDescripcion());
     }
 }

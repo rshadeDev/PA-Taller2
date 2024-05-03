@@ -42,4 +42,8 @@ public class Usuario {
     public List<Libro> getHistorialPrestamos() {
         return historialPrestamos;
     }
+
+    public String getTipo() {
+        return tipo;
+    }
 }
