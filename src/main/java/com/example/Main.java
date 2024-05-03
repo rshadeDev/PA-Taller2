@@ -3,6 +3,9 @@ package com.example;
 import java.time.LocalDate;
 
 public class Main {
+
+    static final Administrador admin = new Administrador();
+
     public static void main(String[] args) {
         // Crear algunos libros
         Libro libro1 = new Libro("El Señor de los Anillos", "J.R.R. Tolkien", "Fantasía", 3);
@@ -16,6 +19,8 @@ public class Main {
         // Crear usuarios
         Usuario usuario1 = Usuario.crearUsuario("Juan", "Estudiante");
         Usuario usuario2 = Usuario.crearUsuario("María", "Profesor");
+        admin.registrarUsuario(usuario1);
+        admin.registrarUsuario(usuario2);
 
         // Prestar libros
         biblioteca.prestarLibro(libro1, usuario1);
@@ -24,15 +29,27 @@ public class Main {
         // Realizar reservas
         biblioteca.reservarLibro(libro1, usuario2);
 
-        // Mostrar historial de préstamos de un usuario
+        // Mostrar historial de préstamos de usuario1
         System.out.println("Historial de préstamos de " + usuario1.getNombre() + ":");
         for (Prestamo prestamo : usuario1.getHistorialPrestamos()) {
             System.out.println("- " + prestamo.obtenerInformacionPrestamo());
         }
 
-        // Mostrar eventos
-        Administrador administrador = new Administrador("Admin", null, null);
+        // Mostrar historial de préstamos de usuario2
+        System.out.println("Historial de préstamos de " + usuario2.getNombre() + ":");
+        for (Prestamo prestamo : usuario2.getHistorialPrestamos()) {
+            System.out.println("- " + prestamo.obtenerInformacionPrestamo());
+        }
+
+        // Crear y Mostrar eventos
         Evento evento = new Evento("Charla literaria", LocalDate.now(), "Charla sobre literatura contemporánea");
-        administrador.agregarEvento(evento);
+        admin.agregarEvento(evento);
+
+        // Usar y Crear administrador
+        Administrador administrador = new Administrador(admin.getNombre(), admin.getUsuariosRegistrados(), admin.getEventos());
+        System.out.println("Usuarios registrados: " + administrador.getUsuariosRegistrados());
+
+        // Eliminar evento
+        admin.eliminarEvento(evento);
     }
 }
