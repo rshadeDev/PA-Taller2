@@ -25,7 +25,7 @@ public class Biblioteca {
             libro.setEjemplaresDisponibles(libro.getEjemplaresDisponibles() - 1);
             Prestamo prestamo = new Prestamo(libro, usuario, LocalDate.now(), LocalDate.now().plusDays(14));
             prestamosActivos.add(prestamo);
-            usuario.agregarPrestamo(libro);
+            usuario.agregarPrestamo(prestamo);
             System.out.println("El usuario " + usuario.getNombre() + " pidio el prestamo del libro: '" + libro.getTitulo() + "'");
         } else {
             System.out.println("El libro '" + libro.getTitulo() + "' no esta disponible para un prestamo.");

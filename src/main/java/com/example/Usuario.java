@@ -6,7 +6,7 @@ import java.util.List;
 public class Usuario {
     private String nombre;
     private String tipo; // Estudiante, Profesor, Personal de la Biblioteca
-    private List<Libro> historialPrestamos;
+    private List<Prestamo> historialPrestamos;
     private List<Libro> librosReservados;
     private List<Integer> calificaciones;
 
@@ -23,8 +23,8 @@ public class Usuario {
         return usuario;
     }
 
-    public void agregarPrestamo(Libro libro) {
-        historialPrestamos.add(libro);
+    public void agregarPrestamo(Prestamo prestamo) {
+        historialPrestamos.add(prestamo);
     }
 
     public void realizarReserva(Libro libro) {
@@ -39,7 +39,7 @@ public class Usuario {
         return nombre;
     }
 
-    public List<Libro> getHistorialPrestamos() {
+    public List<Prestamo> getHistorialPrestamos() {
         return historialPrestamos;
     }
 
