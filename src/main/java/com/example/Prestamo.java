@@ -15,4 +15,8 @@ public class Prestamo {
         this.fechaDevolucion = fechaDevolucion;
     }
 
+    public String obtenerInformacionPrestamo() {
+        return "Libro prestado: " + libroPrestado.getTitulo() + "\n"+ "Fecha de prestamo: " + fechaPrestamo.toString() + "\n" + "Fecha de devolucion: "+ fechaDevolucion.toString();
+    }
+
 }
