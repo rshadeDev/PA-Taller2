@@ -26,8 +26,8 @@ public class Main {
 
         // Mostrar historial de préstamos de un usuario
         System.out.println("Historial de préstamos de " + usuario1.getNombre() + ":");
-        for (Libro libro : usuario1.getHistorialPrestamos()) {
-            System.out.println("- " + libro.getTitulo());
+        for (Prestamo prestamo : usuario1.getHistorialPrestamos()) {
+            System.out.println("- " + prestamo.obtenerInformacionPrestamo());
         }
 
         // Mostrar eventos
