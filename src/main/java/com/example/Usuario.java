@@ -30,4 +30,7 @@ public class Usuario {
         calificaciones.add(calificacion);
     }
 
+    public String getNombre() {
+        return nombre;
+    }
 }
