@@ -18,6 +18,11 @@ public class Usuario {
         this.calificaciones = new ArrayList<>();
     }
 
+    public static Usuario crearUsuario(String nombre, String tipo) {
+        Usuario usuario = new Usuario(nombre, tipo);
+        return usuario;
+    }
+
     public void agregarPrestamo(Libro libro) {
         historialPrestamos.add(libro);
     }
@@ -32,5 +37,9 @@ public class Usuario {
 
     public String getNombre() {
         return nombre;
+    }
+
+    public List<Libro> getHistorialPrestamos() {
+        return historialPrestamos;
     }
 }
